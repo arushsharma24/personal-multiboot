@@ -27,5 +27,5 @@ I intend on following [this](https://medium.com/@manujarvinen/setting-up-a-multi
 Also lol, this might be impossible-ish too, so I might give up in between.
 
 ## Progress
-![0%](https://progress-bar.dev/50)
+![0%](https://progress-bar.dev/0)
 
