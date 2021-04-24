@@ -15,8 +15,24 @@ Device              Start        End   Sectors   Size Type
 I have grub installed with a theme that I'll link to later if I remember to. 
 
 ## Result:-
-Will add an image here later. But I used the refind-black theme, and it looks dope asf.
+![refind-black-wua](https://user-images.githubusercontent.com/46960231/115958379-e25bba00-a524-11eb-945f-594c19b37c7e.png)
+*looks dope asf*
 
+My partitions finally look like this:-
+```
+Device              Start        End   Sectors  Size Type
+/dev/nvme0n1p1       2048     534527    532480  260M EFI System
+/dev/nvme0n1p2     534528     567295     32768   16M Microsoft reserved
+/dev/nvme0n1p3     567296  671655935 671088640  320G Microsoft basic data
+/dev/nvme0n1p4 1998360576 2000408575   2048000 1000M Windows recovery environmen
+/dev/nvme0n1p5 1510516736 1657317375 146800640   70G Linux filesystem
+/dev/nvme0n1p6  671655936 1510516735 838860800  400G Linux filesystem
+/dev/nvme0n1p7 1657317376 1867032575 209715200  100G Linux filesystem
+/dev/nvme0n1p8 1867032576 1992861695 125829120   60G Linux filesystem
+/dev/nvme0n1p9 1992861696 1998360575   5498880  2.6G Linux swap
+```
+![gparted-post-archInstall](https://user-images.githubusercontent.com/46960231/115958568-93faeb00-a525-11eb-856d-c368e8a622c5.png)
+*Nice, a lot of paritions, I'm learning to not be intimidated by these now :)*
 ## Process:-
 Following [this](https://medium.com/@manujarvinen/setting-up-a-multi-boot-of-5-linux-distributions-ca1fcf8d502) guide, I first installed refind by installing the deb and running `sudo dpkg -i <filename-whatever>`. 
 (I don't remember if I ran the refind-install script or not (rip the purpose of this repo lol).
@@ -25,7 +41,15 @@ Anyways, then I cloned the theme refind-theme-regular into the `/boot/efi/EFI/re
 
 And voila, on reboot it should work. 
 
-However, it had a lot of options, while I only want windows and ubuntu. 
+However, it had a lot of options, while I only want windows and ubuntu and any other that I might add.
+
+So well, to do that I just rounded up all the .efi files in my /boot/efi directory, and added them in the refind.conf file in the `dont_scan_files + grub64.efi,blahblah.efi,notyou.efi,yadayada.efi`
+
+Also, since I didn't like the "Booting OS dialog that openend after I selected something in refind, I had to add it in the `include_graphics` or something line and add linux there along with macOS, also added windows (or microsoft, I don't remember, I'll look into the documentation later and update here.) 
+
+
 
 ## Status
 ![99%](https://progress-bar.dev/99)
+Gonna keep it at 99% since even though I'm satisfied with this, this worked pretty easily and this might not work for many other distros as well.
+
