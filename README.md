@@ -1,6 +1,5 @@
 # personal-multiboot
-Me working with my laptop and trying to multiboot it without having to completely reinstall everything.
-
+Me working with my laptop and trying to multiboot it without having to completely reinstall everything. Successfully tested for Arch, Ubuntu, and Windows.
 
 ## Initial state:-
 Output of `fdisk -l /dev/nvme0n1`
@@ -13,19 +12,20 @@ Device              Start        End   Sectors   Size Type
 /dev/nvme0n1p5 1855623168 1998360575 142737408  68.1G Linux filesystem
 /dev/nvme0n1p6  824295424 1793742847 969447424 462.3G Linux filesystem
 ```
+I have grub installed with a theme that I'll link to later if I remember to. 
 
-## Goal:-
-Something similar to this:-
-![image](https://user-images.githubusercontent.com/46960231/115722238-6d5d7880-a39c-11eb-818c-14f87086936d.png)
-*Except with Ubuntu Gnome, Arch, Fedora, and Windows. Maybe ditch Fedora, who knows.*
+## Result:-
+Will add an image here later. But I used the refind-black theme, and it looks dope asf.
 
-Since I have a 1TB SSD, I plan on having around 320 ish GB to Windows (should be enough for games ig), 600 can be split 400-200 between Ubuntu and Arch or 400-100-100 including Fedora. I'll figure this out.
+## Process:-
+Following [this](https://medium.com/@manujarvinen/setting-up-a-multi-boot-of-5-linux-distributions-ca1fcf8d502) guide, I first installed refind by installing the deb and running `sudo dpkg -i <filename-whatever>`. 
+(I don't remember if I ran the refind-install script or not (rip the purpose of this repo lol).
 
-## Plan:-
-I intend on following [this](https://medium.com/@manujarvinen/setting-up-a-multi-boot-of-5-linux-distributions-ca1fcf8d502) guide. I'll be documenting my steps below as I go on with this.
+Anyways, then I cloned the theme refind-theme-regular into the `/boot/efi/EFI/refind` directory using `git clone <repo-url> /boot/efi/EFI/refind/refind-theme-regular`, and edited the refind.conf file to add the line `include refind-theme-regular/theme.conf`   
 
-Also lol, this might be impossible-ish too, so I might give up in between.
+And voila, on reboot it should work. 
 
-## Progress
-![0%](https://progress-bar.dev/0)
+However, it had a lot of options, while I only want windows and ubuntu. 
 
+## Status
+![99%](https://progress-bar.dev/99)
