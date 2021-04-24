@@ -1,5 +1,5 @@
 # personal-multiboot
-Me working with my laptop and trying to multiboot it without having to completely reinstall everything. Successfully tested for Arch, Ubuntu, and Windows.
+Me working with my laptop and trying to multiboot it without having to completely reinstall everything, while also making the boot menu prettier using refind. Successfully tested for Arch, Ubuntu, and Windows.
 
 ## Initial state:-
 Output of `fdisk -l /dev/nvme0n1`
