@@ -43,13 +43,17 @@ And voila, on reboot it should work.
 
 However, it had a lot of options, while I only want windows and ubuntu and any other that I might add.
 
-So well, to do that I just rounded up all the .efi files in my /boot/efi directory, and added them in the refind.conf file in the `dont_scan_files + grub64.efi,blahblah.efi,notyou.efi,yadayada.efi`
+So well, to do that I just rounded up all the .efi files in my /boot/efi directory, and added them in the refind.conf file so that it looks like:-
 
-Also, since I didn't like the "Booting OS dialog that openend after I selected something in refind, I had to add it in the `include_graphics` or something line and add linux there along with macOS, also added windows (or microsoft, I don't remember, I'll look into the documentation later and update here.) 
+`dont_scan_files grub64.efi,bootx64.efi,notyou.efi,yadayada.efi`
 
 
+Also, since I didn't like the "Booting OS dialog that openend after I selected something in refind, I had to add it in the `use_graphics_for` or something line and add linux there along with macOS, also added windows to finally make it:
+
+`use_graphics_for osx, linux, microsoft`
 
 ## Status
 ![99%](https://progress-bar.dev/99)
+
 Gonna keep it at 99% since even though I'm satisfied with this, this worked pretty easily and this might not work for many other distros as well.
 
